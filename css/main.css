@@ -1,0 +1,1185 @@
+html {
+  scroll-behavior: smooth;
+}
+/* ⁡⁣⁣⁢-------------- ​‌‍‌𝗦𝘁𝗮𝗿𝘁 𝗼𝗳 𝗩𝗮𝗿𝗶𝗮𝗯𝗹𝗲𝘀​ ​ --------------⁡ */
+:root {
+  --main-color: #19c8fa;
+  --transparent-color: rgb(15 116 143 / 70%);
+  --main-duration: 0.5s;
+}
+/* ⁡⁣⁣⁢------------ ​‌‍‌𝗘​‌‍‌𝗻𝗱 𝗼𝗳 𝗩𝗮𝗿𝗶𝗮𝗯𝗹𝗲𝘀​ -----------⁡ */
+
+/*⁡⁣⁢⁡⁢⁣⁣ ⁡⁣⁢⁣==================================================================================⁡⁡ */
+
+/* ----------- ​‌‍‌⁡⁣⁣⁢𝗦𝘁𝗮𝗿𝘁 𝗼𝗳 𝗚𝗹𝗼𝗯𝗹𝗲 𝗥𝘂𝗹𝗲𝘀⁡ ​ ----------- */
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+body {
+  font-family: "Open Sans", sans-serif;
+}
+
+.container {
+  padding-left: 15px;
+  padding-right: 15px;
+  margin-left: auto;
+  margin-right: auto;
+}
+/* scroll ميديا هتظبط الدنيا في كل شاشة علشان مش يكون في  */
+/* ⁡⁢⁣⁣𝘚𝘮𝘢𝘭𝘭⁡ */
+@media (min-width: 768px) {
+  .container {
+    width: 750px;
+  }
+}
+/* ⁡⁢⁣⁣𝘔𝘦𝘥𝘪𝘶𝘮 ⁡*/
+@media (min-width: 992px) {
+  .container {
+    width: 970px;
+  }
+}
+/* ⁡⁢⁣⁣𝘓𝘢𝘳𝘨𝘦⁡ */
+@media (min-width: 1200px) {
+  .container {
+    width: 1170px;
+  }
+}
+/* ------------- ⁡⁣⁣⁢​‌‍‌𝗘𝗻𝗱 𝗼𝗳 𝗚𝗹𝗼𝗯𝗹𝗲 𝗥𝘂𝗹𝗲𝘀 ⁡​ ------------- */
+
+/*⁡⁣⁢⁡⁢⁣⁣ ⁡⁣⁢⁣==================================================================================⁡⁡ */
+/* ----------------------------- Start of Header ---------------------------- */
+header {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  z-index: 3;
+}
+header .container {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  min-height: 97px;
+}
+header .container::before {
+  content: "";
+  position: absolute;
+  width: calc(100% - 30px);
+  height: 1px;
+  background-color: #a2a2a2;
+  bottom: 0;
+}
+header .logo {
+  height: 40px;
+}
+nav {
+  flex: 1;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+nav .toggle-menu {
+  color: white;
+  font-size: 22px;
+  display: none;
+}
+@media (max-width: 992px) {
+  nav .toggle-menu {
+    display: block;
+  }
+  nav ul {
+    display: none;
+  }
+  nav .toggle-menu:hover + ul {
+    display: flex;
+    flex-direction: column;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    position: absolute;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    background-color: rgb(0, 0, 0, 0.6);
+  }
+  nav .toggle-menu:hover + ul li a {
+    font-size: 14px;
+    display: block;
+    color: white;
+    text-decoration: none;
+    padding: 20px 20px;
+    z-index: 2;
+  }
+  nav ul li a:hover,
+  nav ul .active {
+    color: var(--main-color);
+    border-bottom: 1px solid var(--main-color);
+  }
+}
+@media (min-width: 992px) {
+  nav ul {
+    position: relative;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+  }
+  nav ul li a {
+    font-size: 14px;
+    display: inline-block;
+    color: white;
+    text-decoration: none;
+    padding: 40px 10px;
+    z-index: 2;
+  }
+  nav ul li a:hover,
+  nav ul .active {
+    color: var(--main-color);
+    border-bottom: 1px solid var(--main-color);
+  }
+}
+
+nav .icon {
+  position: relative;
+  width: 40px;
+  height: 30px;
+  border-left: 1px solid white;
+  margin-left: 30px;
+}
+nav .icon i {
+  font-size: 20px;
+  position: absolute;
+  color: white;
+  top: 50%;
+  transform: translateY(-50%);
+  padding-left: 20px;
+}
+/* ------------------------------ End of Header ----------------------------- */
+
+/*⁡⁣⁢⁡⁢⁣⁣ ⁡⁣⁢⁣==================================================================================⁡⁡ */
+
+/* ------------------------------ Start of landing ----------------------------- */
+.landing {
+  position: relative;
+  height: 100vh;
+  width: 100%;
+  background-image: linear-gradient(0, rgb(0, 0, 0, 0.6), rgb(0, 0, 0, 0.6)),
+    url(/images/landing.jpg);
+  background-size: cover;
+}
+.landing .bullets {
+  position: absolute;
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.bullets ul {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.bullets ul li {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  margin-right: 10px;
+  background-color: transparent;
+  border: 1px solid white;
+}
+.bullets ul li:nth-child(2) {
+  background-color: var(--main-color);
+  border: 1px solid var(--main-color);
+}
+.landing .text {
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 50%;
+  padding: 50px;
+  background-color: var(--transparent-color);
+  color: white;
+  display: flex;
+  justify-content: flex-end;
+}
+@media (max-width: 768px) {
+  .landing .text {
+    width: 100%;
+  }
+}
+.content {
+  max-width: 500px;
+}
+.landing .text h2 {
+  margin-top: 0;
+  font-size: 32px;
+  font-weight: normal;
+  line-height: 1.5;
+  margin-bottom: 20px;
+}
+.landing .text p {
+  font-size: 14px;
+  line-height: 2;
+}
+.landing i {
+  position: absolute;
+  color: white;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.landing i.left {
+  left: 30px;
+}
+.landing i.right {
+  right: 30px;
+}
+@media (max-width: 768px) {
+  .landing i {
+    display: none;
+  }
+}
+/* ------------------------------  End  of landing ----------------------------- */
+
+/*⁡⁣⁢⁡⁢⁣⁣ ⁡⁣⁢⁣==================================================================================⁡⁡ */
+
+/* ------------------------------  Start  of Services ----------------------------- */
+#Services {
+  background-color: white;
+  padding-top: 100px;
+  padding-bottom: 100px;
+}
+#Services .container {
+  position: relative;
+  text-align: center;
+}
+#Services .container h2 {
+  font-weight: normal;
+  font-size: 40px;
+  position: relative;
+  margin-bottom: 70px;
+  text-transform: uppercase;
+}
+#Services .container p {
+  width: 500px;
+  max-width: 100%;
+  line-height: 2;
+  color: #777;
+  text-align: center;
+  margin: 0 auto 100px;
+}
+#Services .container h2::before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: -20px;
+  transform: translateX(-50%);
+  height: 2px;
+  background-color: black;
+  width: 120px;
+}
+#Services .container h2::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: -29px;
+  transform: translateX(-50%);
+  height: 18px;
+  background-color: white;
+  width: 18px;
+  border-radius: 50%;
+  border: 2px solid black;
+}
+#Services .service-content {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(450px, 1fr));
+  grid-column-gap: 40px;
+  grid-row-gap: 60px;
+}
+#Services .service-content .card {
+  display: flex;
+}
+
+#Services .service-content .card h3 {
+  margin-bottom: 30px;
+  text-align: left;
+  color: var(--main-color);
+}
+#Services .service-content .card p {
+  line-height: 2;
+  color: #777;
+  margin-bottom: 0;
+  max-width: 350px;
+}
+#Services .service-content .card i {
+  margin-right: 50px;
+}
+@media (max-width: 768px) {
+  #Services .service-content {
+    display: block;
+  }
+
+  #Services .service-content .card {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    margin-bottom: 40px;
+  }
+  #Services .service-content .card h3 {
+    text-align: center;
+    margin-top: 20px;
+  }
+  #Services .service-content .card i {
+    margin: 0 0 30px;
+  }
+}
+
+/* ------------------------------  End  of Services----------------------------- */
+
+/*⁡⁣⁢⁡⁢⁣⁣ ⁡⁣⁢⁣==================================================================================⁡⁡ */
+
+/* ------------------------------  Start of design ----------------------------- */
+.design {
+  position: relative;
+  height: 80vh;
+  background-image: linear-gradient(0, rgb(0, 0, 0, 0.6), rgb(0, 0, 0, 0.6)),
+    url(/images/design-features.jpg);
+  background-size: cover;
+  overflow: hidden;
+}
+.design .text {
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 50%;
+  padding: 50px;
+  background-color: var(--transparent-color);
+  color: white;
+  display: flex;
+  justify-content: flex-start;
+}
+.design img {
+  position: absolute;
+  bottom: -60px;
+  left: 10%;
+}
+@media (max-width: 768px) {
+  .design img {
+    display: none;
+  }
+  .design .text {
+    width: 100%;
+  }
+}
+.design .text ul {
+  list-style: none;
+}
+.design .text ul li {
+  padding: 15px;
+}
+.design .text h2 {
+  margin-bottom: 40px;
+}
+.design .text ul li::before {
+  font-family: "Font Awesome 5 Free";
+  content: "\f118";
+  font-weight: 900;
+  margin-right: 20px;
+  position: relative;
+  top: 1px;
+}
+
+/* ------------------------------  End of design  ----------------------------- */
+
+/*⁡⁣⁢⁡⁢⁣⁣ ⁡⁣⁢⁣==================================================================================⁡⁡ */
+/* --------------------------- Start of Portfolio --------------------------- */
+#Portfolio {
+  background-color: white;
+  padding-top: 100px;
+  padding-bottom: 100px;
+}
+#Portfolio .container {
+  position: relative;
+  text-align: center;
+}
+#Portfolio .container h2 {
+  font-weight: normal;
+  font-size: 40px;
+  position: relative;
+  margin-bottom: 70px;
+  text-transform: uppercase;
+}
+#Portfolio .container p {
+  width: 500px;
+  max-width: 100%;
+  line-height: 2;
+  color: #777;
+  text-align: center;
+  margin: 0 auto 100px;
+}
+#Portfolio .container h2::before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: -20px;
+  transform: translateX(-50%);
+  height: 2px;
+  background-color: black;
+  width: 120px;
+}
+#Portfolio .container h2::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: -29px;
+  transform: translateX(-50%);
+  height: 18px;
+  background-color: white;
+  width: 18px;
+  border-radius: 50%;
+  border: 2px solid black;
+}
+
+#Portfolio ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#Portfolio ul li {
+  padding: 10px;
+}
+#Portfolio ul li:hover,
+#Portfolio ul li:first-child {
+  background-color: var(--main-color);
+  color: white;
+}
+#Portfolio .gallery {
+  margin-top: 60px;
+}
+@media (min-width: 768px) {
+  #Portfolio .gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(50%, 1fr));
+  }
+}
+
+@media (min-width: 1200px) {
+  #Portfolio .gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(calc(100% / 4), 1fr));
+  }
+}
+#Portfolio .button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#Portfolio button {
+  background-color: var(--main-color);
+  color: white;
+  text-transform: uppercase;
+  padding: 15px 20px;
+  width: fit-content;
+  border: none;
+  margin-top: 30px;
+}
+#Portfolio .card {
+  position: relative;
+  overflow: hidden;
+}
+#Portfolio .card img {
+  max-width: 100%;
+  transition: 0.5s;
+}
+#Portfolio .card:hover img {
+  transform: rotate(3deg) scale(1.1);
+}
+#Portfolio .card .text {
+  position: absolute;
+  bottom: -100%;
+  width: 100%;
+  background-color: white;
+  padding: 20px;
+  transition: 0.5s;
+}
+#Portfolio .card:hover .text {
+  bottom: 0;
+}
+#Portfolio .card .text h4 {
+  margin-bottom: 10px;
+  font-weight: normal;
+}
+#Portfolio .card .text p {
+  color: var(--main-color);
+}
+/* --------------------------- End  of Portfolio --------------------------- */
+/* --------------------------- Start of video section --------------------------- */
+.video {
+  position: relative;
+}
+.video::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgb(0, 0, 0, 0.4);
+}
+.video video {
+  width: 100%;
+  height: 100%;
+}
+.video .text {
+  width: 100%;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: var(--transparent-color);
+  color: white;
+  text-align: center;
+  padding: 50px;
+}
+.video .text h2 {
+  font-weight: normal;
+  margin-bottom: 30px;
+}
+.video .text p {
+  margin-bottom: 30px;
+}
+.video .text button {
+  padding: 10px 20px;
+  border: none;
+  text-transform: uppercase;
+  background-color: black;
+  color: white;
+}
+@media (max-width: 500px) {
+  .video .text {
+    padding: 25px;
+  }
+  .video .text p {
+    margin-bottom: 15px;
+  }
+  .video .text h2 {
+    margin-bottom: 15px;
+  }
+}
+/* --------------------------- End  of video section --------------------------- */
+#About {
+  background-color: white;
+  padding-top: 100px;
+}
+#About .container {
+  position: relative;
+  text-align: center;
+}
+#About .container h2 {
+  font-weight: normal;
+  font-size: 40px;
+  position: relative;
+  margin-bottom: 70px;
+  text-transform: uppercase;
+}
+#About .container p {
+  width: 500px;
+  max-width: 100%;
+  line-height: 2;
+  color: #777;
+  text-align: center;
+  margin: 0 auto 100px;
+}
+#About .container h2::before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: -20px;
+  transform: translateX(-50%);
+  height: 2px;
+  background-color: black;
+  width: 120px;
+}
+#About .container h2::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: -29px;
+  transform: translateX(-50%);
+  height: 18px;
+  background-color: white;
+  width: 18px;
+  border-radius: 50%;
+  border: 2px solid black;
+}
+
+#About .container {
+  overflow: hidden;
+}
+#About .container img {
+  position: relative;
+  bottom: -120px;
+  margin-top: -120px;
+  max-width: 100%;
+}
+@media (max-width: 500px) {
+  #About .container img {
+    bottom: -75px;
+  }
+}
+/* ----------------------------- start of status ---------------------------- */
+.status {
+  padding-top: 100px;
+  padding-bottom: 100px;
+  position: relative;
+  background-image: linear-gradient(0, rgb(0, 0, 0, 0.6), rgb(0, 0, 0, 0.6)),
+    url(/images/stats.png);
+  background-size: cover;
+  text-align: center;
+}
+.status .container {
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: var(--transparent-color);
+  color: white;
+  text-align: center;
+}
+.status .container .boxes {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.status .container .boxes .card {
+  padding: 50px;
+}
+@media (max-width: 768px) {
+  .status .container .boxes .card {
+    flex-basis: 100%;
+  }
+}
+/* ⁡⁢⁣⁣𝘔𝘦𝘥𝘪𝘶𝘮 ⁡*/
+@media (min-width: 768px) {
+  .status .container .boxes .card {
+    flex-basis: 50%;
+  }
+}
+/* ⁡⁢⁣⁣𝘓𝘢𝘳𝘨𝘦⁡ */
+@media (min-width: 993px) {
+  .status .container .boxes .card {
+    flex-basis: 25%;
+  }
+  .status .container .boxes {
+    flex-wrap: nowrap;
+  }
+  .status .container .boxes .card {
+    padding: 45px;
+  }
+}
+.status .boxes .card i {
+  width: 40px;
+  height: 40px;
+  padding: 10px;
+  border-radius: 50%;
+  background-color: black;
+  margin-top: 20px;
+}
+.status .boxes .card p:first-of-type {
+  margin-top: 20px;
+  font-size: 50px;
+  font-weight: bold;
+}
+.status .boxes .card p:nth-of-type(2) {
+  margin-top: 20px;
+}
+/* ----------------------------- End of status ---------------------------- */
+/* --------------------------- Start of Skill ---------------------------  */
+.Skill {
+  padding-top: 100px;
+  padding-bottom: 100px;
+}
+
+.Testimonials .bullets {
+  margin-top: 20px;
+}
+.Testimonials .bullets ul li {
+  border: 1px solid #aaa;
+}
+.Skill .container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+.Testimonials .Content img {
+  display: block;
+  border-radius: 50%;
+  width: 100px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  margin-left: auto;
+  margin-right: auto;
+}
+div .Testimonials > h3 {
+  font-weight: normal;
+  text-transform: uppercase;
+  text-align: center;
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+div .Testimonials > p {
+  color: #777;
+  margin-bottom: 50px;
+  line-height: 1.8;
+  text-align: center;
+}
+
+.Testimonials .Content .text {
+  line-height: 1.8;
+  text-align: center;
+  border-bottom: 1px solid #ccc;
+}
+.Testimonials .Content .text p {
+  color: #777;
+  margin-bottom: 10px;
+  text-align: right;
+}
+div .our-Skills > h3 {
+  font-weight: normal;
+  text-transform: uppercase;
+  text-align: center;
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+div .our-Skills > p {
+  color: #777;
+  margin-bottom: 50px;
+  line-height: 1.8;
+  text-align: center;
+}
+.our-Skills .progress .one {
+  text-transform: uppercase;
+}
+.our-Skills .progress .one .prog {
+  background-color: #dedadc;
+  height: 30px;
+  margin-top: 10px;
+  margin-bottom: 40px;
+}
+.our-Skills .progress .one .prog span {
+  height: 100%;
+  background-color: var(--main-color);
+  display: block;
+  position: relative;
+}
+.our-Skills .progress .one .prog span::before {
+  content: attr(data-progess);
+  position: absolute;
+  background-color: black;
+  color: white;
+  border-radius: 5px;
+  padding: 5px;
+  top: -40px;
+  right: -18px;
+}
+.our-Skills .progress .one .prog span::after {
+  content: "";
+  position: absolute;
+  border-style: solid;
+  border-width: 9px;
+  border-color: black transparent transparent;
+  right: -8px;
+  top: -13px;
+}
+@media (min-width: 992px) {
+  .Testimonials,
+  .our-Skills {
+    flex-basis: 45%;
+  }
+  .Testimonials .Content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .Testimonials .Content img {
+    border-radius: 50%;
+    width: 100px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    display: flex;
+    margin-right: 50px;
+  }
+  .Testimonials .Content .text {
+    text-align: left;
+  }
+}
+/* --------------------------- End of Skill ---------------------------  */
+/* --------------------------- Start of quoate ---------------------------  */
+.quoate {
+  padding-top: 100px;
+  padding-bottom: 100px;
+  background-image: linear-gradient(0, rgb(0, 0, 0, 0.75), rgb(0, 0, 0, 0.75)),
+    url(/images/quote.jpg);
+  background-size: cover;
+  text-align: center;
+  color: white;
+}
+.quoate q {
+  font-size: 28px;
+  margin-bottom: 20px;
+  display: block;
+}
+.quoate q::before {
+  font-family: "Font Awesome 5 Free";
+  content: "\22";
+  color: white;
+}
+.quoate q::after {
+  font-family: "Font Awesome 5 Free";
+  content: "\22";
+  color: white;
+}
+/* --------------------------- End of quoate ---------------------------  */
+/* ---------------------------start of pricing ---------------------------  */
+#Pricing {
+  background-color: white;
+  padding-top: 100px;
+  padding-bottom: 100px;
+}
+#Pricing .container {
+  position: relative;
+  text-align: center;
+}
+#Pricing .container h2 {
+  font-weight: normal;
+  font-size: 40px;
+  position: relative;
+  margin-bottom: 70px;
+  text-transform: uppercase;
+}
+#Pricing .container > p {
+  width: 500px;
+  max-width: 100%;
+  line-height: 2;
+  color: #777;
+  text-align: center;
+  margin: 0 auto 90px;
+}
+#Pricing .container h2::before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: -20px;
+  transform: translateX(-50%);
+  height: 2px;
+  background-color: black;
+  width: 120px;
+}
+#Pricing .container h2::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: -29px;
+  transform: translateX(-50%);
+  height: 18px;
+  background-color: white;
+  width: 18px;
+  border-radius: 50%;
+  border: 2px solid black;
+}
+.container .plans {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 30px;
+}
+.container .plans .plan {
+  background-color: whitesmoke;
+}
+.container .plans .plan .plan-header {
+  border-top: 1px solid var(--main-color);
+  border-bottom: 1px solid var(--main-color);
+  padding: 30px 10px;
+}
+.container .plans .plan .plan-header h3 {
+  font-weight: normal;
+  text-transform: uppercase;
+  margin-bottom: 30px;
+}
+.container .plans .plan .plan-header p {
+  font-weight: bold;
+  font-size: 50px;
+}
+.container .plans .plan .plan-header p::before {
+  content: "$";
+  position: relative;
+  font-size: 25px;
+  font-weight: normal;
+  top: -35px;
+  margin-right: 10px;
+}
+.container .plans .plan .plan-header p::after {
+  content: "/mo";
+  position: relative;
+  font-size: 25px;
+  font-weight: normal;
+  bottom: 0px;
+  margin-left: 10px;
+}
+.container .plans .plan ul {
+  list-style: none;
+}
+.container .plans .plan ul li {
+  padding: 20px;
+  width: fit-content;
+  margin-left: auto;
+  margin-right: auto;
+}
+.container .plans .plan ul li:last-child {
+  border-bottom: 1px solid var(--main-color);
+  width: 100%;
+}
+.container .plans .plan ul li:not(:last-child) {
+  border-bottom: 1px solid var(--main-color);
+}
+.container .plans .plan button {
+  padding: 20px;
+  border: 1px solid var(--main-color);
+  margin: 30px auto;
+}
+#Pricing .container p.contact {
+  margin-bottom: 20px;
+  margin-top: 40px;
+  color: black;
+  font-size: large;
+}
+#Pricing .container p.contact + button {
+  color: white;
+  background-color: var(--main-color);
+  border: none;
+  padding: 15px 30px;
+}
+/* --------------------------- End of pricing ---------------------------  */
+
+/* --------------------------- start of Email---------------------------  */
+.Email {
+  padding-top: 100px;
+  padding-bottom: 100px;
+  background-image: linear-gradient(0, rgb(0, 0, 0, 0.65), rgb(0, 0, 0, 0.65)),
+    url(/images/subscribe.jpg);
+  background-size: cover;
+  text-align: center;
+  color: white;
+}
+.Email .container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+@media (max-width: 991px) {
+  .Email .container {
+    flex-direction: column;
+  }
+  .Email .container p {
+    padding: 0;
+    margin: 0;
+  }
+}
+.Email .container form {
+  display: flex;
+  width: 500px;
+  max-width: 100%;
+  position: relative;
+}
+.Email .container form input {
+  background: none;
+  padding: 20px 20px 20px 60px;
+  caret-color: var(--main-color);
+  border: 1px solid white;
+  width: calc(100% - 130px);
+  border-right: none;
+}
+.Email .container form input:focus {
+  outline: none;
+}
+.Email .container form input::placeholder {
+  color: white;
+}
+.Email .container button {
+  width: 130px;
+  color: white;
+  background-color: var(--main-color);
+  border: 1px solid white;
+  border-left: none;
+}
+.Email .container form i {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  padding: 25px;
+}
+.Email .container p {
+  line-height: 2;
+  margin-left: 50px;
+}
+@media (max-width: 991px) {
+  .Email .container p {
+    margin: 0;
+    margin-top: 30px;
+  }
+}
+/* --------------------------- End of Email ---------------------------  */
+
+/* ----------------------- Start of Contact us  ----------------------  */
+
+.Contact_us {
+  background-color: white;
+  padding-top: 100px;
+  padding-bottom: 100px;
+}
+.Contact_us .container {
+  position: relative;
+  text-align: center;
+}
+.Contact_us .container h2 {
+  font-weight: normal;
+  font-size: 40px;
+  position: relative;
+  margin-bottom: 70px;
+  text-transform: uppercase;
+}
+.Contact_us .container > p {
+  width: 500px;
+  max-width: 100%;
+  line-height: 2;
+  color: #777;
+  text-align: center;
+  margin: 0 auto 90px;
+}
+.Contact_us .container h2::before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: -20px;
+  transform: translateX(-50%);
+  height: 2px;
+  background-color: black;
+  width: 120px;
+}
+.Contact_us .container h2::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: -29px;
+  transform: translateX(-50%);
+  height: 18px;
+  background-color: white;
+  width: 18px;
+  border-radius: 50%;
+  border: 2px solid black;
+}
+.Contact_us .container .box form {
+  flex-basis: 70%;
+}
+.Contact_us .container .box .info {
+  flex-basis: 25%;
+}
+.Contact_us .container .box {
+  display: flex;
+  justify-content: space-between;
+}
+@media (max-width: 991px) {
+  .Contact_us .container .box {
+    flex-direction: column;
+  }
+  .info {
+    order: -1;
+    margin-bottom: 30px;
+  }
+}
+.Contact_us .container .box form [name="inpu"] {
+  display: block;
+  margin-bottom: 30px;
+  width: 100%;
+  padding: 20px;
+  border: 1px solid #ccc;
+}
+.Contact_us .container .box form [name="inpu"]:focus {
+  outline: none;
+}
+.Contact_us .container .box form textarea {
+  height: 200px;
+}
+.Contact_us .container .box form button {
+  color: white;
+  background-color: var(--main-color);
+  border: none;
+  padding: 20px 30px;
+  display: flex;
+  margin-left: auto;
+}
+.Contact_us .container .box .info h3 {
+  font-weight: normal;
+  margin-bottom: 30px;
+}
+.Contact_us .container .box .info p {
+  color: #777;
+  margin-bottom: 10px;
+}
+.Contact_us .container .box .info p + h3 {
+  margin-top: 90px;
+  margin-bottom: 30px;
+}
+@media (max-width: 991px) {
+  .Contact_us .container .box .info p + h3 {
+    margin-top: 30px;
+    margin-bottom: 25px;
+  }
+}
+
+.Contact_us .container .box .info address {
+  color: #777;
+  line-height: 2;
+}
+
+/* ----------------------- End of Contact us  ----------------------  */
+/* ----------------------- Start of footer ----------------------  */
+footer {
+  padding-top: 100px;
+  padding-bottom: 100px;
+  background-image: linear-gradient(0, rgb(0, 0, 0, 0.65), rgb(0, 0, 0, 0.65)),
+    url(/images/subscribe.jpg);
+  background-size: cover;
+  text-align: center;
+  color: white;
+}
+footer .container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  gap: 40px;
+}
+footer img + p {
+  text-transform: uppercase;
+  font-size: 22px;
+  font-weight: normal;
+  border-bottom: 1px solid white;
+  padding: 20px;
+}
+footer .social-icons i {
+  padding: 20px;
+}
+footer .social-icons {
+  margin-top: -30px;
+}
+footer p span {
+  font-weight: bold;
+  color: var(--main-color);
+}
+/* ----------------------- End of footer  ----------------------  */
